@@ -26,12 +26,10 @@ git clone https://github.com/mrtrvl/references.git
 2. Rename `example.config.js` file to `config.js` and replace the placeholder GitHub access token and repository information:
 
 ```javascript
-const CONFIG = {
-  githubAccessToken: "your-token-here",
-  repo: "yourusername/repositoryname",
+window.CONFIG = {
+    githubAccessToken: "your-token-here",
+    repo: "yourusername/repositoryname",
 };
-
-export default CONFIG;
 ```
 
 3. Install the plugin in Chrome:
