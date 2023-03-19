@@ -1,0 +1,17 @@
+{
+  "name": "references",
+  "version": "1.0.0",
+  "description": "A Chrome plugin to create GitHub issues with selected text from a web page and the web page address.",
+  "main": "config.example.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}
