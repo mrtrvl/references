@@ -18,14 +18,8 @@
     },
     "content_scripts": [
         {
-            "matches": [
-                "https://*/*",
-                "http://*/*"
-            ],
-            "js": [
-                "content.js"
-            ],
-            "module": true
+          "matches": ["https://*/*", "http://*/*"],
+          "js": ["config.js", "content.js"]
         }
-    ]
+      ]
 }

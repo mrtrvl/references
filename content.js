@@ -1,16 +1,19 @@
-import CONFIG from "./config.js";
-
 function getGithubAccessToken() {
-    return Promise.resolve(CONFIG.githubAccessToken);
-  }
+    return Promise.resolve(window.CONFIG.githubAccessToken);
+}
 
-async function createIssue(text, url) {
+async function createIssue(text, pageUrl) {
     const token = await getGithubAccessToken();
-    const repo = CONFIG.repo;
-    const title = `Issue from: ${url}`;
-    const body = `**URL**: ${url}\n\n**Selected Text**:\n${text}`;
+    const repo = window.CONFIG.repo;
+    const title = `Issue from: ${pageUrl}`;
+    const body = `**URL**: ${pageUrl}\n\n**Selected Text**:\n${text}`;
 
     const url = `https://api.github.com/repos/${repo}/issues`;
+    console.log('Title: ', title);
+    console.log('Body: ', body);
+    console.log('Url: ', url);
+    console.log('PageUrl: ', pageUrl);
+    console.log('Token: ', token);
     const headers = new Headers({
         "Content-Type": "application/json",
         Authorization: `token ${token}`,
@@ -47,6 +50,3 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     }
 });
 
-function getGithubAccessToken() {
-    return Promise.resolve("your-token-here");
-}
