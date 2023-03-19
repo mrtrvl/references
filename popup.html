@@ -21,10 +21,14 @@
       }
     </style>
   </head>
+  
   <body>
     <h3>Create GitHub Issue</h3>
     <p>Select text on the page and click the button below to create a new issue.</p>
-    <button id="createIssueBtn">Create Issue</button>
+    <label for="issueTitle">Issue Title:</label>
+    <input type="text" id="issueTitle" name="issueTitle" />
+    <br />
+    <button id="createIssue">Create Issue</button>
     <script src="popup.js"></script>
   </body>
 </html>
