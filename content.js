@@ -1,13 +1,17 @@
+/* eslint-disable no-alert */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-/* eslint-disable no-alert */
-function getGithubAccessToken() {
-  return Promise.resolve(window.CONFIG.githubAccessToken);
+
+async function getGithubAccessToken() {
+  return new Promise((resolve) => {
+    chrome.storage.sync.get('accessToken', ({ accessToken }) => {
+      resolve(accessToken);
+    });
+  });
 }
 
-async function createIssue(text, pageUrl, title) {
+async function createIssue(text, pageUrl, title, repo) {
   const token = await getGithubAccessToken();
-  const { repo } = window.CONFIG;
   const body = `**Selected Text**:\n${text}\n\n**URL**: ${pageUrl}`;
 
   const url = `https://api.github.com/repos/${repo}/issues`;
@@ -34,14 +38,23 @@ async function createIssue(text, pageUrl, title) {
   }
 }
 
+async function getRepos() {
+  return new Promise((resolve) => {
+    chrome.storage.sync.get('repos', (data) => {
+      resolve(data.repos || []);
+    });
+  });
+}
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'createIssue') {
     const selectedText = window.getSelection().toString();
     const pageUrl = window.location.href;
     const issueTitle = request.title || `Issue from ${pageUrl}`;
+    const selectedRepo = request.repo;
 
     if (selectedText) {
-      createIssue(selectedText, pageUrl, issueTitle);
+      createIssue(selectedText, pageUrl, issueTitle, selectedRepo);
     } else {
       alert('Please select some text on the page before creating an issue.');
     }

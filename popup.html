@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <style>
-      body {
-        width: 300px;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin: 15px;
-      }
-      button {
-        background-color: #4183C4;
-        color: white;
-        padding: 8px 20px;
-        border: none;
-        cursor: pointer;
-        margin-top: 10px;
-      }
-      button:hover {
-        background-color: #3571B3;
-      }
-    </style>
-  </head>
-  
-  <body>
-    <h3>Create GitHub Issue</h3>
-    <p>Select text on the page and click the button below to create a new issue.</p>
-    <label for="issueTitle">Issue Title:</label>
-    <input type="text" id="issueTitle" name="issueTitle" />
-    <br />
-    <button id="createIssue">Create Issue</button>
-    <script src="popup.js"></script>
-  </body>
+
+<head>
+  <style>
+    body {
+      width: 300px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 15px;
+    }
+
+    button {
+      background-color: #4183C4;
+      color: white;
+      padding: 8px 20px;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #3571B3;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>Create GitHub Issue</h3>
+  <p>Select text on the page and click the button below to create a new issue.</p>
+  <label for="issueTitle">Issue Title:</label>
+  <input type="text" id="issueTitle" name="issueTitle" />
+  <br />
+  <label for="repoSelect">Select Repository:</label>
+  <select id="repoSelect" name="repoSelect"></select>
+  <br />
+  <button id="createIssue">Create Issue</button>
+  <script src="popup.js"></script>
+</body>
+
 </html>

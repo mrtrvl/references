@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Extension Options</title>
+    <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+<h1>Options</h1>
+<label>
+    <span>Access Token:</span>
+    <input type="password" id="accessToken" placeholder="your-token-here" title="Enter your GitHub personal access token" />
+</label>
+<label>
+    <span>Add Repository:</span>
+    <input type="text" id="newRepo" placeholder="yourusername/repositoryname" title="Enter the GitHub repository name in the format 'yourusername/repositoryname'" />
+    <button id="addRepoBtn" class="addRepoBtn">Add</button>
+</label>
+<div id="repoList"></div>
+<button id="saveBtn">Save</button>
+<div id="status"></div>
+<script src="options.js"></script>
+</body>
+</html>

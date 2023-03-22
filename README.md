@@ -14,8 +14,6 @@ A Chrome plugin to create GitHub issues with selected text from a web page and t
 - Go to GitHub's settings page: https://github.com/settings/tokens
 - Click on "Generate new token"
 - Give your token a name, select the `repo` scope, and click "Generate token"
-- Copy the generated token and replace the `getGithubAccessToken` function in `content.js`:
-
 
 1. Clone this repository.
 
@@ -23,31 +21,26 @@ A Chrome plugin to create GitHub issues with selected text from a web page and t
 git clone https://github.com/mrtrvl/references.git
 ```
 
-2. Rename `example.config.js` file to `config.js` and replace the placeholder GitHub access token and repository information:
-
-```javascript
-window.CONFIG = {
-    githubAccessToken: "your-token-here",
-    repo: "yourusername/repositoryname",
-};
-```
-
-3. Install the plugin in Chrome:
+1. Install the plugin in Chrome:
 - Open Chrome and go to chrome://extensions
-- Enable "Developer mode" in the top-right corner
-- Click "Load unpacked" and select the plugin directory you created earlier
+- Enable `Developer mode` in the top-right corner
+- Click `Load unpacked` and select the plugin directory you created earlier
+- After installing the plugin, right click on the plugin icon in the Chrome toolbar, and then click on the `Options` to open the options page.
+- On the options page, enter your GitHub access token and repository information in the respective input fields. The repository should be in the format `yourusername/repositoryname`.
+- Click the `Save` button to save your settings.
 
 ## Usage
+
 - Navigate to any web page.
 - Select the text you want to include in the GitHub issue.
 - Click on the plugin icon in the Chrome toolbar.
 - Click the "Create Issue" button in the popup.
 - An issue will be created in the specified GitHub repository with the selected text and the web page address.
+- If the action is successful, you will see an alert saying, "GitHub issue created successfully!" Otherwise, you will see an error message.
 
 ## Icons used
 
 <a href="https://www.flaticon.com/free-icons/star" title="star icons">Star icons created by Smashicons - Flaticon</a>
-
 
 ## License
 
