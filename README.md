@@ -21,12 +21,13 @@ A Chrome plugin to create GitHub issues with selected text from a web page and t
 git clone https://github.com/mrtrvl/references.git
 ```
 
-1. Install the plugin in Chrome:
+2. Install the plugin in Chrome:
 - Open Chrome and go to chrome://extensions
 - Enable `Developer mode` in the top-right corner
 - Click `Load unpacked` and select the plugin directory you created earlier
 - After installing the plugin, right click on the plugin icon in the Chrome toolbar, and then click on the `Options` to open the options page.
 - On the options page, enter your GitHub access token and repository information in the respective input fields. The repository should be in the format `yourusername/repositoryname`.
+- You can add multiple repositories
 - Click the `Save` button to save your settings.
 
 ## Usage
@@ -34,6 +35,8 @@ git clone https://github.com/mrtrvl/references.git
 - Navigate to any web page.
 - Select the text you want to include in the GitHub issue.
 - Click on the plugin icon in the Chrome toolbar.
+- Add Issue Title text (if not provided, then selected text will be as Issue Title)
+- Choose repository from the repositories list (last used will be default next time)
 - Click the "Create Issue" button in the popup.
 - An issue will be created in the specified GitHub repository with the selected text and the web page address.
 - If the action is successful, you will see an alert saying, "GitHub issue created successfully!" Otherwise, you will see an error message.
